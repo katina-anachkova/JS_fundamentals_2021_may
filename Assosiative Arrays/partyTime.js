@@ -1,13 +1,10 @@
 function solve(listOfGuests) {
-    //sth happend before party - adding into lists
-    //sth happened after party - removing form list
 
-    let indexOfParty = listOfGuests.indexOf('PARTY')// to know how to separate them
+    let indexOfParty = listOfGuests.indexOf('PARTY')
     let digitlist = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
     let vip = [];
     let regular = [];
 
-    //adding guests
     for (let i = 0; i < indexOfParty; i++) {
         let currentGuest = listOfGuests[i];
 
@@ -17,9 +14,6 @@ function solve(listOfGuests) {
             regular.push(currentGuest);
         }
     }
-
-    //removing guests
-    let counter = 0;
     for (let i = indexOfParty + 1; i < listOfGuests.length; i++) {
         let currentGuest = listOfGuests[i];
         if (vip.includes(currentGuest)) {
@@ -39,5 +33,3 @@ function solve(listOfGuests) {
         console.log(guest)
     }
 }
-
-solve(['7IK9Yo0h', '9NoBUajQ', 'Ce8vwPmE', 'SVQXQCbc', 'tSzE5t0p', 'PARTY', '9NoBUajQ', 'Ce8vwPmE', 'SVQXQCbc']);
